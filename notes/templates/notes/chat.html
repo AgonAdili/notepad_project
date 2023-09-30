@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with GPT-3</title>
+</head>
+<body>
+    <h1>Chat with GPT-3</h1>
+    {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Logout</a>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="user_input" rows="4" cols="50">{{ user_input }}</textarea><br>
+        <button type="submit">Ask</button>
+    </form>
+    <div>
+        <p><strong>Response:</strong></p>
+        <p>{{ chat_response }}</p>
+    </div>
+</body>
+</html>
