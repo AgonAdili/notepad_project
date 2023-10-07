@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Notes List</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Notes List</h1>
     {% if user.is_authenticated %}
-        <a href="{% url 'logout' %}">Logout</a>
+    <a href="{% url 'logout' %}">Logout</a>
     {% endif %}
     <ul>
-        {% for note in notes %}
-            <a href="{{ note.id }}"><li>{{ note.title }}</li></a>        
-        {% endfor %}
+      {% for note in notes %}
+      <a href="{{ note.id }}"><li>{{ note.title }}</li></a>
+      {% endfor %}
     </ul>
     <a href="{% url 'create_note' %}">Create New Note</a>
-</body>
-
+  </body>
 </html>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Delete Note</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Delete Note</h1>
     <p>Are you sure you want to delete this note?</p>
     <form method="post">
-        {% csrf_token %}
-        <input type="submit" value="Delete">
+      {% csrf_token %}
+      <input type="submit" value="Delete" />
     </form>
-</body>
+  </body>
 </html>
