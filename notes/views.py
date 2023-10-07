@@ -3,7 +3,7 @@ from .models import Note, ChatConversation
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import RegistrationForm
-import openai, json
+import openai
 
 def note_list(request):
     notes = Note.objects.filter(user=request.user)
@@ -56,7 +56,6 @@ def register(request):
     
     return render(request, 'registration/register.html', {'form': form})
 
-
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
@@ -71,7 +70,6 @@ def login_view(request):
         form = AuthenticationForm()
     
     return render(request, 'registration/login.html', {'form': form})
-
 
 openai.api_key = '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'
 
